@@ -606,11 +606,11 @@ All fields are auto-filled and locked (read-only with blue tint + padlock icon):
 
 | Field | Value | Notes |
 |---|---|---|
-| Full Name | Dr. Sarah Ahmed | From Active Directory |
+| Full Name | Dr. Husameldin | From Active Directory |
 | Employee ID | UD-FAC-1042 | From Active Directory |
 | College | College of Engineering & IT | From Active Directory |
 | Academic Rank | Associate Professor | From Active Directory |
-| Email Address | s.ahmed@ud.ac.ae | From Active Directory |
+| Email Address | hhadam@ud.ac.ae | From Active Directory |
 | Submission Date | 16 May 2025 | System auto-set |
 
 **Below fields:**
