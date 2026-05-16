@@ -500,8 +500,8 @@ Card titled `Action Required`:
 - For each active application, show a horizontal stepper:
   ```
   Application: ICAI 2025 — London  [CRS-2025-CEIT-0042]
-  ●━━━━●━━━━●━━━━●━━━━●━━━━○━━━━○
-  RC   Dean  Dir.  VP  Pres. PRF  Done
+  ●━━━━●━━━━●━━━━●━━━━○━━━━○
+  Dean Dir. VP  Pres. PRF  Done
   [Completed in green ●] [Current in gold ●] [Upcoming in grey ○]
   ```
 - Each dot is labelled below
@@ -635,7 +635,6 @@ All fields are auto-filled and locked (read-only with blue tint + padlock icon):
 | Conference Start Date | Date picker | ✱ | Must be future date |
 | Conference End Date | Date picker | ✱ | Must be after start date |
 | Conference Type | Radio buttons | ✱ | International · National |
-| Organising Body / Institution | Text input | ✱ | |
 
 **AI Assistant panel** (right side, collapsible panel `280px`):
 ```
@@ -668,10 +667,6 @@ estimated total ≈ AED 12,400
 | Field | Type | Required | Notes |
 |---|---|---|---|
 | Paper Title | Text input | ✱ | |
-| Co-Authors | Repeatable field group | — | Each entry: Name + Affiliation. [+ Add Co-Author] button |
-| Presentation Type | Radio buttons | ✱ | Oral Presentation · Poster · Keynote / Invited Talk |
-| SCOPUS Indexing Status | Radio + live badge | ✱ | See below |
-| Link to Conference Proceedings | URL input | — | Optional, Scimago/Scopus listing URL |
 
 **SCOPUS Verification widget:**
 ```
@@ -890,7 +885,7 @@ Approved  Approved   In Review   Waiting    Waiting    Waiting   Waiting
 ```
 
 Below each completed stage:
-- Approver name: `Dr. Khalid Al Mansoori`
+- Approver name: `Prof. Shadi Atalla`
 - Date & time: `14 May 2025, 10:32`
 - Comment (if any): shown in a small speech bubble on hover
 
@@ -908,7 +903,7 @@ Each section (A–G) is a collapsible card:
 ```
 ▼  A. Applicant Information                             [Expand / Collapse]
    ──────────────────────────────────────────────────
-   Full Name          Dr. Sarah Ahmed
+   Full Name          Dr. Husameldin
    Employee ID        UD-FAC-1042
    College            College of Engineering & IT
    ...
@@ -916,13 +911,9 @@ Each section (A–G) is a collapsible card:
 
 **Approval Comments Thread tab layout:**
 ```
-[RC — Research Committee]                            13 May 2025, 09:15
-  "Application reviewed. SCOPUS indexing confirmed. Approved to proceed."
-  — Dr. Fatima Hassan, Research Committee Chair
-
 [Dean — College of Engineering & IT]                 14 May 2025, 10:32
   "Approved. Ensure substitution plan is confirmed with the HOD."
-  — Prof. Mohammed Al Rashid, Dean CEIT
+  — Prof. Shadi Atalla, Dean CEIT
 
 [Director of Research]                               Current Stage
   ⏳ Awaiting review...
@@ -1167,7 +1158,7 @@ Section heading: `Applications Awaiting RC Review`
 Table columns:
 | Reference | Faculty Name | College | Conference | Submitted | SCOPUS | Days Waiting | Action |
 |---|---|---|---|---|---|---|---|
-| CRS-2025-CEIT-0042 | Dr. S. Ahmed | CEIT | ICAI 2025 | 14 May | ✅ | 2 | Review |
+| CRS-2025-CEIT-0042 | Dr. Husameldin | CEIT | ICAI 2025 | 14 May | ✅ | 2 | Review |
 
 - SCOPUS column: shows ✅ / ❌ / ⏳ badge inline
 - Days Waiting: turns amber at 1 day, red at 2+ days (approaching SLA)
@@ -1186,7 +1177,7 @@ Primary landing screen for all approver roles. Shows pending queue, analytics su
 
 **Welcome bar:**
 ```
-Good morning, Prof. Mohammed Al Rashid
+Good morning, Prof. Shadi Atalla
 Dean — College of Engineering & IT
                                     [Go to Pending Approvals →] [primary button]
 ```
@@ -1251,7 +1242,7 @@ Full list of applications currently awaiting the logged-in approver's action. Pr
 
 | # | Reference | Faculty Name | College | Conference Name | Country | Submitted | Days Waiting | SLA | Status | Action |
 |---|---|---|---|---|---|---|---|---|---|---|
-| 1 | CRS-2025-CEIT-0042 | Dr. S. Ahmed | CEIT | ICAI 2025 | UK | 14 May | 2d | 🟡 | [Pending Dean] | Review |
+| 1 | CRS-2025-CEIT-0042 | Dr. Husameldin | CEIT | ICAI 2025 | UK | 14 May | 2d | 🟡 | [Pending Dean] | Review |
 
 **SLA column:**
 - 🟢 Green dot: within SLA (< 50% elapsed)
@@ -1262,7 +1253,7 @@ Full list of applications currently awaiting the logged-in approver's action. Pr
 ```
 ┌─────────────────────────────────────────────────────────────────┐
 │  CRS-2025-CEIT-0042                          [Pending Dean] 🟡  │
-│  Dr. Sarah Ahmed · College of Engineering & IT                  │
+│  Dr. Husameldin · College of Engineering & IT                  │
 │  ICAI 2025 — London, United Kingdom · 12–14 Aug 2025           │
 │  Submitted: 14 May 2025 · Waiting: 2 days · Est. AED 12,000    │
 │                          [Review Application]  [Quick Approve]  │
@@ -1274,7 +1265,7 @@ Full list of applications currently awaiting the logged-in approver's action. Pr
 ┌─────────────────────────────────────┐
 │  Quick Decision                     │
 │  CRS-2025-CEIT-0042                 │
-│  Dr. Sarah Ahmed — ICAI 2025        │
+│  Dr. Husameldin — ICAI 2025         │
 │                                     │
 │  Comment (optional):                │
 │  [Textarea]                         │
@@ -1297,7 +1288,7 @@ Full review screen for a single application. Approver reads all details and take
 **Page title area:**
 ```
 ICAI 2025 — International Conference on Artificial Intelligence
-Dr. Sarah Ahmed · College of Engineering & IT
+Dr. Husameldin · College of Engineering & IT
 [Status: Pending Your Approval]              [CRS-2025-CEIT-0042 — monospace]
 ```
 
@@ -1325,7 +1316,7 @@ Below the tabs, always visible:
 ```
 Comments from Previous Approvers
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-[RC · Dr. Fatima Hassan · 13 May 2025, 09:15]
+[Dean · Prof. Shadi Atalla · 13 May 2025, 09:15]
 "Application reviewed. SCOPUS indexing confirmed. Approved."
 ```
 
@@ -1398,7 +1389,7 @@ Approvers see PRFs awaiting their specific approval stage in the PRF chain.
 **Table columns:**
 | PRF Reference | Linked Application | Faculty Name | College | Purpose | Total (AED) | Submitted | SLA | Action |
 |---|---|---|---|---|---|---|---|---|
-| PRF-2025-CEIT-0042 | CRS-2025-CEIT-0042 | Dr. S. Ahmed | CEIT | Conference Reg. | 12,000 | 16 May | 🟢 | Review |
+| PRF-2025-CEIT-0042 | CRS-2025-CEIT-0042 | Dr. Husameldin | CEIT | Conference Reg. | 12,000 | 16 May | 🟢 | Review |
 
 **PRF Review Screen** (opened from "Review" action): Same fixed bottom action bar pattern as application review. Approver sees the full PRF form (read-only), the auto-fill source summary, all previous stage decisions, and takes: Approve / Return / Reject.
 
@@ -1459,7 +1450,7 @@ Each card:
 Line chart — average days per stage across the current academic year.
 ```
 Avg. Days per Stage — Academic Year 2024–2025
-[Line chart: RC · Dean · Director · VP · President on X-axis, days on Y-axis]
+[Line chart: Dean · Director · VP · President on X-axis, days on Y-axis]
 ```
 Annotation: Any stage > SLA target is highlighted in red.
 
@@ -1591,7 +1582,7 @@ Procurement receives fully-approved PRFs (all 5 approval stages complete) and ma
 **Main table — Approved PRFs (awaiting PO):**
 | PRF Reference | Faculty | College | Purpose | Total (AED) | President Approved | Days Since Approval | PO Status | Action |
 |---|---|---|---|---|---|---|---|---|
-| PRF-2025-CEIT-0042 | Dr. S. Ahmed | CEIT | ICAI 2025 Reg. | 12,000 | 15 May 2025 | 1 | Not Started | Process |
+| PRF-2025-CEIT-0042 | Dr. Husameldin | CEIT | ICAI 2025 Reg. | 12,000 | 15 May 2025 | 1 | Not Started | Process |
 
 **Clicking "Process"** opens the PRF detail (read-only) with a Procurement Action panel at the bottom:
 ```
@@ -1628,7 +1619,7 @@ Active Conference Leave — May 2025
 **Main table — Conference Leave Feed:**
 | Faculty Name | College | Conference | Country | Leave Start | Leave End | Substitution Arranged | Approved By |
 |---|---|---|---|---|---|---|---|
-| Dr. Sarah Ahmed | CEIT | ICAI 2025 | United Kingdom | 12 Aug 2025 | 14 Aug 2025 | Yes — Dr. Karim | UD President |
+| Dr. Husameldin | CEIT | ICAI 2025 | United Kingdom | 12 Aug 2025 | 14 Aug 2025 | Yes — Dr. Rida | UD President |
 
 - All rows are read-only. No action buttons.
 - Export to Excel available (top right).
@@ -1669,7 +1660,7 @@ Large icon cards linking to each admin section:
 **User table:**
 | Name | Employee ID | Email | Role | College | Status | Last Login | Actions |
 |---|---|---|---|---|---|---|---|
-| Dr. Sarah Ahmed | UD-FAC-1042 | s.ahmed@ud.ac.ae | Faculty | CEIT | Active | 16 May 2025 | Edit · Deactivate |
+| Dr. Husameldin | UD-FAC-1042 | hhadam@ud.ac.ae | Faculty | CEIT | Active | 16 May 2025 | Edit · Deactivate |
 
 **Edit User panel (opens as a right-side drawer, `400px` wide):**
 ```
@@ -1757,7 +1748,7 @@ Immutable, searchable record of all system events for compliance and security re
 **Audit log table:**
 | Timestamp | User | Role | Action | Entity Type | Entity Reference | IP Address | Details |
 |---|---|---|---|---|---|---|---|
-| 16 May 2025 10:32:14 | Dr. Sarah Ahmed | Faculty | SUBMITTED | Application | CRS-2025-CEIT-0042 | 10.0.1.42 | View |
+| 16 May 2025 10:32:14 | Dr. Husameldin | Faculty | SUBMITTED | Application | CRS-2025-CEIT-0042 | 10.0.1.42 | View |
 
 "View" opens a detail modal showing old value vs. new value (JSON diff for changed records).
 
@@ -1822,7 +1813,7 @@ TODAY — 16 May 2025
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 [● Unread] 🔔 Application Approved by Dean                      10:32
             CRS-2025-CEIT-0042 — ICAI 2025 has been approved
-            by Prof. Mohammed Al Rashid and advanced to the
+            by Prof. Shadi Atalla and advanced to the
             Director of Research.
             [View Application →]
 
@@ -1862,9 +1853,9 @@ User views and updates their personal profile, notification preferences, and del
 ```
 [Avatar — circular, 80px]  [Change Photo]
 
-Full Name:         Dr. Sarah Ahmed        [Read-only — from AD]
+Full Name:         Dr. Husameldin         [Read-only — from AD]
 Employee ID:       UD-FAC-1042            [Read-only]
-Email:             s.ahmed@ud.ac.ae       [Read-only]
+Email:             hhadam@ud.ac.ae        [Read-only]
 College:           CEIT                   [Read-only]
 Academic Rank:     Associate Professor    [Read-only]
 
@@ -1903,7 +1894,7 @@ Active from:  [Date picker]   to:  [Date picker]
 [Save Delegation Settings]
 
 Current Delegation:
-Delegating to: Prof. Ahmad Al Sayed
+Delegating to: Prof. Amjad
 Active: 20 May – 28 May 2025
 [Cancel Delegation]
 ```
@@ -1997,7 +1988,5 @@ Summary of all reusable components defined in this specification.
 **Screen Layout & Design Specification · v1.0**
 
 *Confidential — Internal Use Only*
-
-*Next step: High-fidelity mockups screen by screen, starting with Screen 01 — Login.*
 
 </div>
