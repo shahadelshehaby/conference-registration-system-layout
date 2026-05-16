@@ -441,7 +441,7 @@ The Faculty member's primary view after login. Shows their application activity,
 
 **Top area — Welcome bar:**
 ```
-Good morning, Dr. Sarah Ahmed 👋
+Good morning, Dr. Husameldin 👋
 [24px, --ud-navy, bold]
 Here is your current activity overview.
 [14px, --ud-text-mid]
