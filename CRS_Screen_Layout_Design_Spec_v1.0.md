@@ -3,11 +3,11 @@
 
 ---
 
-> **Document Status:** Draft — For Review
-> **Version:** 1.0
-> **Date:** May 2025
-> **Prepared by:** Research Affairs
-> **Audience:** IT Development Team · UI/UX Team
+> **Document Status:** Draft — For Review  
+> **Version:** 1.0  
+> **Date:** May 2025  
+> **Prepared by:** Research Affairs  
+> **Audience:** IT Dept  
 > **Classification:** Confidential — Internal Use Only
 > **Reference PRD:** CRS PRD v2.0
 
