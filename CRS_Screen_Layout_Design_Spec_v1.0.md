@@ -23,7 +23,7 @@
 6. [Screen 04 — Faculty: Application Status & Detail View](#6-screen-04--faculty-application-status--detail-view)
 7. [Screen 05 — Faculty: PRF Review & Confirm](#7-screen-05--faculty-prf-review--confirm)
 8. [Screen 06 — Faculty: PRF Status Tracker](#8-screen-06--faculty-prf-status-tracker)
-9. [Screen 07 — Faculty: Post-Conference Compliance Checklist](#9-screen-07--faculty-post-conference-compliance-checklist)
+9. [Screen 07 — Faculty: Post-Conference LinkedIn Compliance Task](#9-screen-07--faculty-post-conference-linkedin-compliance-task)
 10. [Screen 08 — Research Committee: Home & Review Queue](#10-screen-08--research-committee-home--review-queue)
 11. [Screen 09 — Approver: Home Dashboard (Dean / Director / VP / President)](#11-screen-09--approver-home-dashboard-dean--director--vp--president)
 12. [Screen 10 — Approver: Pending Approvals Queue](#12-screen-10--approver-pending-approvals-queue)
@@ -258,7 +258,7 @@ The global shell is the persistent wrapper around all authenticated screens. It 
 | 📋 | My Applications | Count of active apps | My Applications list |
 | ➕ | New Application | — | Application Form (Step 1) |
 | 📄 | My PRFs | Count of active PRFs | PRF Status Tracker |
-| ✅ | Post-Conference Tasks | Count of overdue/pending tasks | Post-Conference Checklist |
+| ✅ | Post-Conference Task | Indicator if LinkedIn post pending | LinkedIn Compliance Task |
 | 👤 | Profile | — | Profile & Settings |
 
 #### Research Committee
@@ -485,13 +485,13 @@ Each card:
 Card titled `Action Required`:
 - List of items needing attention, each item:
   ```
-  [!] Post-conference tasks due — ICAI 2024
-      2 items overdue · Due: 20 May 2025
+  [!] LinkedIn post required — ICAI 2025
+      Post due within 7 days of conference end · Due: 21 Aug 2025
       [Complete Now →]
   ```
   - Orange left border `3px` for overdue items
   - Amber for due-soon items (within 3 days)
-- If no tasks: Empty state — "No pending tasks. You're all caught up!"
+- If no tasks: Empty state — "No LinkedIn posts pending. You're all caught up!"
 
 ---
 
@@ -934,9 +934,9 @@ Card:
 └──────────────────────────────────────────────────────┘
 ```
 
-**Section 4 — Post-Conference Tasks (shown only after conference dates have passed):**
+**Section 4 — Post-Conference LinkedIn Task (shown only after conference dates have passed):**
 
-Card with task summary. Links to the full Post-Conference Checklist screen.
+Card with task summary. Shows LinkedIn post status (Pending / Submitted / Verified / Overdue) and links to the LinkedIn Compliance Task screen.
 
 ---
 
@@ -1065,73 +1065,133 @@ Below the stepper: same comment thread format as Application Status (Section 6).
 
 ---
 
-## 9. Screen 07 — Faculty: Post-Conference Compliance Checklist
+## 9. Screen 07 — Faculty: Post-Conference LinkedIn Compliance Task
 
 ### 9.1 Purpose
-After the conference end date passes, faculty must complete 5 compliance obligations. This screen manages those tasks.
+After the conference end date passes, the system activates a single compliance task: the faculty member must publish a LinkedIn post about their conference attendance, tagging the University of Dubai's official account with the required hashtag, and submit the post URL into the system.
 
 ### 9.2 Layout
 
-**Breadcrumb:** `Home  >  Post-Conference Tasks  >  ICAI 2025`
+**Breadcrumb:** `Home  >  Post-Conference Task  >  ICAI 2025`
 
 **Page title:**
-```
-Post-Conference Compliance
+Post-Conference LinkedIn Task
 ICAI 2025 — London · Conference ended: 14 August 2025
-[Status badge: 2 of 5 tasks complete]
-```
+[Status badge: Pending]
 
-**Top alert (if overdue items exist):**
-```
-⚠️  You have 2 overdue tasks. Please complete them as soon as possible.
-    Your Dean has been notified.
-[Orange banner, full width]
-```
+**Due date alert banner (amber, if not yet submitted):**
+⏰  Your LinkedIn post is due by 21 August 2025 (7 days after conference end).
+Late submission will notify your Dean.
+[Amber banner, full width]
 
-**Task Cards — stacked vertically, one per obligation:**
+**Overdue alert banner (red, if past deadline):**
+⚠️  Your LinkedIn post is overdue.
+Please submit as soon as possible.
+[Red banner, full width]
 
-Each card:
-```
-┌── [Status colour left border: orange=overdue, amber=due soon, green=complete] ─┐
-│                                                                                 │
-│  [Status badge]                    Due: 19 Aug 2025    [● Overdue / ✓ Done]   │
-│                                                                                 │
-│  Task 1: Submit conference schedule showing your name and paper details         │
-│          to your College Dean.                                                  │
-│                                                                                 │
-│  [📎 Upload Evidence]              [i] Policy: R 10.3 §6.1                     │
-│                                                                                 │
-│  Completed tasks show:                                                          │
-│  ✅  Uploaded: schedule_ICAI2025.pdf  ·  20 Aug 2025, 14:22                    │
-│                                                                                 │
-└─────────────────────────────────────────────────────────────────────────────────┘
-```
+---
 
-**5 tasks displayed in order:**
+**Main content — single task card:**
+┌─────────────────────────────────────────────────────────────────────┐
+│                                                                     │
+│  📣  Share Your Conference Experience on LinkedIn                   │
+│  ─────────────────────────────────────────────────────────────────  │
+│                                                                     │
+│  Post about your attendance at ICAI 2025 on your LinkedIn profile, │
+│  mention @University of Dubai, and include #UDResearch.            │
+│                                                                     │
+│  Requirements checklist (shown as inline ticks as URL is verified):│
+│  ☐  Post published on LinkedIn                                      │
+│  ☐  Mentions @University of Dubai                                   │
+│  ☐  Includes hashtag #UDResearch                                    │
+│  ☐  References the conference name                                  │
+│                                                                     │
+└─────────────────────────────────────────────────────────────────────┘
 
-| # | Task | Deadline | Evidence |
-|---|---|---|---|
-| 1 | Submit conference schedule to College Dean | D+5 | File upload |
-| 2 | Submit published paper to Library | D+10 | File upload |
-| 3 | Provide proceedings copy to College RC and UD-RC | D+10 | Confirm + optional upload |
-| 4 | Submit expense receipts to Finance (if advance issued) | D+5 | File upload |
-| 5 | Complete conference feedback/report form | D+10 | Text form + optional upload |
+---
 
-**Task 5 expands to show a feedback form inline:**
-```
-Conference Feedback Report
-━━━━━━━━━━━━━━━━━━━━━━━━━
-Overall conference quality:  ★★★★☆  (star rating)
-Key learnings / highlights:  [Textarea, 600 chars]
-Recommendations for UD:      [Textarea, 400 chars]
-[Upload supporting material: optional]
-[Submit Feedback]
-```
+**Suggested Post Template card (gold border, collapsible, open by default):**
+┌─── 💡 Suggested Post Template ──────────────────────────────────────┐
+│                                                                      │
+│  Copy and customise this template for your LinkedIn post:           │
+│                                                                      │
+│  "Excited to have attended/presented at [ICAI 2025] in             │
+│  [London, UK] on behalf of @University of Dubai! A great           │
+│  opportunity to share research on [Paper Title] and connect         │
+│  with leading academics in the field. Proud to represent UD's      │
+│  growing research community. #UDResearch #UniversityOfDubai         │
+│  #Research"                                                         │
+│                                                                      │
+│              [📋 Copy Template]  [ghost button]                     │
+│                                                                      │
+│  [Post to LinkedIn ↗]  [primary button — opens LinkedIn in new tab] │
+└──────────────────────────────────────────────────────────────────────┘
 
-**Bottom — completion summary:**
-```
-[Progress bar showing 2/5 complete — gold fill]
-All 5 tasks must be completed within 15 working days of your return.
+- Conference name, city, and paper title are **auto-filled** from the application data (blue tint)
+- "Post to LinkedIn" button opens LinkedIn's post composer in a new tab with the template pre-filled in the text box (via LinkedIn share URL)
+
+---
+
+**Post submission section:**
+Submit Your LinkedIn Post URL
+─────────────────────────────────────────────────────────
+Once your post is live, paste the URL here:
+[  https://www.linkedin.com/posts/...               ]  [Verify & Submit]
+[i] How to copy your LinkedIn post URL:
+Open your post → click the three dots (···) → "Copy link to post"
+
+- URL field: validated as a `linkedin.com/posts/` URL format
+- **Verify & Submit** button: saves the URL, changes task status to `Submitted — Under Review`, sends notification to Director of Research for manual verification
+- If URL format is invalid: inline red error "Please enter a valid LinkedIn post URL (linkedin.com/posts/...)"
+
+---
+
+**After submission — confirmed state:**
+┌─────────────────────────────────────────────────────────────────┐
+│                                                                 │
+│  🎉  Post Submitted Successfully!                               │
+│                                                                 │
+│  Your LinkedIn post has been submitted for verification.        │
+│  You'll be notified once it has been reviewed.                 │
+│                                                                 │
+│  Submitted URL:                                                 │
+│  linkedin.com/posts/sarah-ahmed-icai2025...  [View Post ↗]     │
+│                                                                 │
+│  Status:  [Submitted — Under Review]  badge                    │
+│                                                                 │
+│  🏅  You've earned the UD Research Ambassador badge!            │
+│      It's now displayed on your CRS profile.                   │
+│                                                                 │
+└─────────────────────────────────────────────────────────────────┘
+
+---
+
+**LinkedIn Leaderboard section (below the task card, always visible):**
+🏆  UD Research LinkedIn Leaderboard — Academic Year 2024–2025
+─────────────────────────────────────────────────────────────────
+Top posts by faculty engagement (likes + comments + shares)
+Rank  Faculty Member          Conference              Engagement
+──────────────────────────────────────────────────────────────────
+🥇 1  Dr. Ahmed Al Rashid     IEEE ICAI 2025          ████████ 342
+🥈 2  Prof. Sara Nour         ACM SIGCHI 2025         ██████   218
+🥉 3  Dr. Sarah Ahmed         ICAI 2025               █████    ← You
+4  Dr. Khalid Hassan       NeurIPS 2025            ████     156
+5  Prof. Layla Mohammed    ABA Law 2025            ██        89
+[View full leaderboard →]
+
+- Current faculty member's row is highlighted with `--ud-blue-light` background
+- Engagement score is entered manually by Admin or the faculty member (auto-fetch from LinkedIn API is a future enhancement)
+- "Dean's Pick" badge 🌟 shown next to any post the Dean has marked as featured
+
+### 9.3 Task Status Reference
+
+| Status | Badge colour | Meaning |
+|---|---|---|
+| Pending | Amber | Conference ended, post not yet submitted |
+| Submitted — Under Review | Blue | URL submitted, awaiting Admin/Director verification |
+| Verified | Green | Post confirmed live and compliant by reviewer |
+| Overdue | Red | 7-day deadline passed, Dean notified |
+
 ```
 
 ---
@@ -1710,7 +1770,7 @@ Conference Approval Chain — SLA Thresholds
 Same table for PRF Approval Chain (6 stages).
 
 **Draft retention period:** `[Number] days` (default: 90)
-**Post-conference compliance window:** `[Number] working days` (default: 15)
+**Post-conference LinkedIn task deadline:** `[Number] days after conference end date` (default: 7)
 
 **Tab 2 — Notification Templates:**
 
@@ -1817,8 +1877,8 @@ TODAY — 16 May 2025
             Director of Research.
             [View Application →]
 
-[● Unread] ⚠️  Post-Conference Task Overdue                     09:00
-            Task 1 for ICAI 2024 is overdue (due: 19 Aug 2024).
+[● Unread] ⚠️  LinkedIn Post Overdue                            09:00
+            Your LinkedIn post for ICAI 2024 is overdue (due: 21 Aug 2024).
             [Complete Now →]
 
 YESTERDAY — 15 May 2025
@@ -1875,7 +1935,7 @@ Table of notification types with toggles (Email / In-App / Both / Off):
 |---|---|---|
 | Application status changed | ✅ | ✅ |
 | Approver comment received | ✅ | ✅ |
-| Post-conference task due | ✅ | ✅ |
+| LinkedIn post due reminder | ✅ | ✅ |
 | PRF status changed | ✅ | ✅ |
 | SLA reminder (approvers only) | ✅ | ✅ |
 
@@ -1945,7 +2005,8 @@ Summary of all reusable components defined in this specification.
 - `<BudgetForecastWidget>` — Finance forward-looking projection (Section 18.2)
 
 ### 27.6 Task Components
-- `<TaskCard>` — post-conference obligation card with status, due date, upload (Section 9.2)
+- `<LinkedInTaskCard>` — LinkedIn compliance task card with template, URL submission, verification status, and leaderboard (Section 9.2)
+- `<LinkedInLeaderboard>` — ranked list of faculty posts by engagement score, with Dean's Pick badge (Section 9.2)
 - `<PRFItemRow>` — editable/read-only PRF line item with auto-fill indicator (Section 7.2)
 - `<ProcurementActionPanel>` — PO status update form (Section 19.2)
 
@@ -1961,7 +2022,7 @@ Summary of all reusable components defined in this specification.
 | 04 Application Status/Detail | ✅ (own) | ✅ | ✅ | ✅ | ✅ | ✅ | — | — | — | ✅ |
 | 05 PRF Review & Confirm | ✅ (own) | — | — | — | — | — | — | — | — | — |
 | 06 PRF Status Tracker | ✅ (own) | — | — | — | — | — | — | — | — | — |
-| 07 Post-Conference Checklist | ✅ (own) | — | — | — | — | — | — | — | — | — |
+| 07 Post-Conference LinkedIn Task | ✅ (own) | — | — | — | — | — | — | — | — | — |
 | 08 RC Home & Queue | — | ✅ | — | — | — | — | — | — | — | — |
 | 09 Approver Home | — | — | ✅ | ✅ | ✅ | ✅ | — | — | — | — |
 | 10 Pending Approvals Queue | — | — | ✅ | ✅ | ✅ | ✅ | — | — | — | — |
